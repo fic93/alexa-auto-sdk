@@ -1,0 +1,12 @@
+.DS_Store
+/*native-dependencies
+/.clangd
+/.idea
+/.repo
+/.vscode
+/build
+/cmake-build-debug
+/extras
+compile_commands.json
+tools/builder
+/samples/cpp/assets/config.json

@@ -1,0 +1,25 @@
+---
+BasedOnStyle: Google
+ColumnLimit: 120
+IndentWidth: 4
+---
+Language: Cpp
+AccessModifierOffset: -4
+AlignAfterOpenBracket: AlwaysBreak
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortFunctionsOnASingleLine: None
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeInheritanceComma: true
+BreakConstructorInitializers: AfterColon
+ConstructorInitializerIndentWidth: 8
+DerivePointerAlignment: false
+PenaltyReturnTypeOnItsOwnLine: 20000
+ReflowComments: false
+SortIncludes: false
+---
+Language: Java
+BreakAfterJavaFieldAnnotations: true
+ContinuationIndentWidth: 8
+JavaImportGroups: ['android', 'androidx', 'com', 'junit', 'net', 'org', 'java', 'javax']
+---
