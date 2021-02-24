@@ -136,7 +136,7 @@ while [[ $# -gt 0 ]]; do
 		shift
 		;;
 		--enable-address-sanitizer)
-		# This sets a AAC_ENABLE_ADDRESS_SANITIZER for the consuming application. See samples/cpp/SampleApp/CMakeLists.txt for an example.
+		# This sets a AAC_ENABLE_ADDRESS_SANITIZER for the consuming application. See apps/cpp/AlexaBackend/CMakeLists.txt for an example.
 		ENABLE_ADDRESS_SANITIZER=1
 		shift
 		;;
@@ -269,7 +269,7 @@ build_sdk() {
 	local available_extensions=(comms lvc)
 	local extra_local_conf="${BUILDER_HOME}/.extralocal.conf"
 	local audio_extension="${SDK_HOME}/extensions/experimental/system-audio"
-	local sample_app="${SDK_HOME}/samples/cpp/aac-sample-cpp.bb"
+	local sample_app="${SDK_HOME}/apps/cpp/aac-apps-cpp.bb"
 	local aasb_extension="${SDK_HOME}/extensions/aasb"
 	local aasb_comms_extension="${SDK_HOME}/extensions/extras/alexacomms/extensions/aasb-comms"
 	local aasb_lvc_extension="${SDK_HOME}/extensions/extras/local-voice-control/extensions/aasb-lvc"
