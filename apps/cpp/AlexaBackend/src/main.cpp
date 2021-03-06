@@ -18,6 +18,7 @@
 #include "AlexaBackend/Args.h"
 #include "AlexaBackend/Status.h"
 #include "AlexaBackend/TTY.h"
+#include "AlexaBackend/Zmq/ZmqHandler.h"
 
 using Application = sampleApp::Application;
 using Status = sampleApp::Status;
@@ -29,7 +30,7 @@ using Status = sampleApp::Status;
 #include <memory>    // std::unique_ptr
 
 // ZMQ lib
-#include <zmq.hpp>
+// #include <zmq.hpp>
 #include <string>
 #include <unistd.h>
 
@@ -59,6 +60,7 @@ int main(int argc, const char* argv[]) {
         auto list = args.list();
         auto name = args.name();
         auto size = list.size();
+        Z::ZmqHandler zmqHandler = Z::ZmqHandler();
         using Level = sampleApp::logger::LoggerHandler::Level;
         auto applicationContext = sampleApp::ApplicationContext::create(name);
         Ensures(applicationContext != nullptr);
@@ -180,19 +182,9 @@ int main(int argc, const char* argv[]) {
         std::unique_ptr<Application> application{};
         Status status;
         do {
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
-                std::cout << "TESTTTTTT" << std::endl;
             Ensures((application = Application::create()) != nullptr);
             status = application->run(applicationContext);
+            zmqHandler.listenForRequests();
             application.reset();
         } while (status == Status::Restart);
         return status;

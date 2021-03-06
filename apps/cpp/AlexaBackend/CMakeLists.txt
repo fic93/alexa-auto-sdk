@@ -153,6 +153,7 @@ set(CXX_HEADER_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/AlexaBackend/TextToSpeech/TextToSpeechHandler.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/AlexaBackend/TTY.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/AlexaBackend/Views.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/AlexaBackend/Zmq/ZmqHandler.h
 )
 
 if(ALEXACOMMS)
@@ -217,6 +218,7 @@ set(CXX_SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/TextToSpeech/TextToSpeechHandler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Views.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Zmq/ZmqHandler.cpp
 )
 
 if(ALEXACOMMS)
